@@ -18,3 +18,13 @@ Please implement delivery as an standalone service (just like the random joke se
 ![](Micropos.svg)
 
 Consider the advantage by doing so and write it down in your readme file.
+
+
+
+
+
+优势：
+
+* Integration消息驱动通信，响应及时。
+* Integration代码量极小，易读。
+* 其是各种关键技术的集大成者，集成了mongoDB、RabbitMq、Feed、File、FTP、Gemfire、HTTP、JDBC等，会为未来spring的易用性提升有非常大的帮助。将这么多东西的传输和处理进行了集成。
