@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.micropos.api.integration;
 
+import com.micropos.api.dto.DeliveryDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.integration.dsl.IntegrationFlow;
@@ -12,9 +13,9 @@ public class HttpOutboundGateway {
     @Bean
     public IntegrationFlow outGate() {
         return IntegrationFlows.from("sampleChannel")
-                .handle(Http.outboundGateway("https://api.chucknorris.io/jokes/random")
+                .handle(Http.outboundGateway("http://localhost:8080/delivery")
                         .httpMethod(HttpMethod.GET)
-                        .expectedResponseType(Joke.class))
+                        .expectedResponseType(DeliveryDto.class))
                 .get();
     }
 }
